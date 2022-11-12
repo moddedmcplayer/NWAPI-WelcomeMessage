@@ -4,12 +4,14 @@
     using PluginAPI.Core;
     using PluginAPI.Core.Attributes;
     using PluginAPI.Enums;
+    using PluginAPI.Events;
 
     public class Plugin
     {
         [PluginEntryPoint("WelcomeMessage", "1.0.0", "Displays a welcome message when users join.", "moddedmcplayer")]
         void Enabled()
         {
+            EventManager.RegisterEvents(this);
         }
 
         [PluginEvent(ServerEventType.PlayerJoined)]
