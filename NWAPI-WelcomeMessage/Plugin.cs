@@ -19,7 +19,7 @@
         {
             Timing.CallDelayed(1f, () =>
             {
-                player.SendBroadcast(Config.WelcomeMessage.Replace("%playername", player.Nickname), Config.Duration);
+                player.SendBroadcast(Config.WelcomeMessage.Replace("%playername%", player.Nickname), Config.Duration);
             });
         }
 
