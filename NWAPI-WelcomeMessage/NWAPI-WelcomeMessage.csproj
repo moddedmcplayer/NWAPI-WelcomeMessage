@@ -7,8 +7,8 @@
         <ProjectGuid>{ED826E28-A10D-4F04-94FF-C2405588110B}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>NWAPI_WelcomeMessage</RootNamespace>
-        <AssemblyName>NWAPI_WelcomeMessage</AssemblyName>
+        <RootNamespace>moddedmcplayer_NWAPI-WelcomeMessage</RootNamespace>
+        <AssemblyName>moddedmcplayer_NWAPI-WelcomeMessage</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -37,6 +37,9 @@
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass">
           <HintPath>$(EXILED_REFERENCES)\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror">
+          <HintPath>..\..\..\..\..\Steam\steamapps\common\SCP Secret Laboratory Dedi PBeta\SCPSL_Data\Managed\Mirror.dll</HintPath>
         </Reference>
         <Reference Include="PluginAPI, Version=12.0.0.0, Culture=neutral, processorArchitecture=Amd64">
           <HintPath>..\packages\Northwood.PluginAPI.12.0.0-rc.1\lib\net48\PluginAPI.dll</HintPath>

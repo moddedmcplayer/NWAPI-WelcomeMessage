@@ -1,5 +1,6 @@
 ﻿namespace NWAPI_WelcomeMessage
 {
+    using Hints;
     using MEC;
     using PluginAPI.Core;
     using PluginAPI.Core.Attributes;
@@ -8,7 +9,7 @@
 
     public class Plugin
     {
-        [PluginEntryPoint("WelcomeMessage", "1.0.0", "Displays a welcome message when users join.", "moddedmcplayer")]
+        [PluginEntryPoint("WelcomeMessage", "1.0.1", "Displays a welcome message when users join.", "moddedmcplayer")]
         void Enabled()
         {
             EventManager.RegisterEvents(this);
@@ -17,9 +18,9 @@
         [PluginEvent(ServerEventType.PlayerJoined)]
         void OnPlayerJoin(Player player)
         {
-            Timing.CallDelayed(1f, () =>
+            Timing.CallDelayed(4f, () =>
             {
-                player.SendBroadcast(Config.WelcomeMessage.Replace("%playername%", player.Nickname), Config.Duration);
+                player.ReceiveHint(Config.WelcomeMessage.Replace("%playername%", player.Nickname), Config.Duration);
             });
         }
 
