@@ -9,7 +9,7 @@
 
     public class Plugin
     {
-        [PluginEntryPoint("WelcomeMessage", "1.0.1", "Displays a welcome message when users join.", "moddedmcplayer")]
+        [PluginEntryPoint("WelcomeMessage", "1.1.1", "Displays a welcome message when users join.", "moddedmcplayer")]
         void Enabled()
         {
             EventManager.RegisterEvents(this);
@@ -20,7 +20,10 @@
         {
             Timing.CallDelayed(4f, () =>
             {
-                player.ReceiveHint(Config.WelcomeMessage.Replace("%playername%", player.Nickname), Config.Duration);
+                if(Config.UseBroadcasts)
+                    Broadcast.Singleton.TargetAddElement(player.ReferenceHub.characterClassManager.connectionToClient, Config.WelcomeMessage.Replace("%playername%", player.Nickname), Config.Duration, Broadcast.BroadcastFlags.Normal);
+                else
+                    player.ReceiveHint(Config.WelcomeMessage.Replace("%playername%", player.Nickname), Config.Duration);
             });
         }
 
