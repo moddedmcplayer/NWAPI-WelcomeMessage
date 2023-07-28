@@ -6,6 +6,7 @@
     {
         [Description("The message to display to players when they join the server.")]
         public string WelcomeMessage { get; set; } = "Welcome %playername%!";
+        public float Delay { get; set; } = 3f;
         [Description("The duration of the message in seconds.")]
         public ushort Duration { get; set; } = 5;
         [Description("Whether or not to use broacasts. If false, hints will be used instead")]
